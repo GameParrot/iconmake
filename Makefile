@@ -13,7 +13,8 @@ universal:
 	rm iconmakearm
 	rm iconmakeintel
 install:
-	mkdir "$(prefix)/bin"
+	-mkdir "$(prefix)/bin"
 	swiftc iconmake.swift -o "$(bindir)/iconmake"
 uninstall:
 	rm "$(bindir)/iconmake"
+.PHONY: intel arm universal install uninstall
