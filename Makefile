@@ -15,3 +15,5 @@ universal:
 install:
 	mkdir "$(prefix)/bin"
 	swiftc iconmake.swift -o "$(bindir)/iconmake"
+uninstall:
+	rm "$(bindir)/iconmake"
