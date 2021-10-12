@@ -1,0 +1,1 @@
+swiftc iconmake.swift -o "$1"
