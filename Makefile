@@ -1,3 +1,5 @@
+prefix ?= /usr/local
+bindir = $(prefix)/bin
 all:
 	swiftc iconmake.swift -o iconmake
 intel:
@@ -10,3 +12,5 @@ universal:
 	lipo -create iconmakeintel iconmakearm -output iconmake
 	rm iconmakearm
 	rm iconmakeintel
+install:
+	swiftc iconmake.swift -o "$(bindir)/iconmake"
