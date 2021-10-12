@@ -17,4 +17,3 @@ install:
 	swiftc iconmake.swift -o "$(bindir)/iconmake"
 uninstall:
 	rm "$(bindir)/iconmake"
-.PHONY: intel arm universal install uninstall
