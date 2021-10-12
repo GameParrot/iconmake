@@ -13,4 +13,5 @@ universal:
 	rm iconmakearm
 	rm iconmakeintel
 install:
+	mkdir "$(prefix)/bin"
 	swiftc iconmake.swift -o "$(bindir)/iconmake"
