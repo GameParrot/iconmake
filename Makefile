@@ -14,6 +14,10 @@ universal:
 	rm iconmakeintel
 install:
 	-mkdir "$(prefix)/bin"
-	swiftc iconmake.swift -o "$(bindir)/iconmake"
+	swiftc iconmake.swift -target arm64e-apple-macos11 -o iconmakearm
+	swiftc iconmake.swift -target x86_64-apple-macos11 -o iconmakeintel
+	lipo -create iconmakeintel iconmakearm -output "$(bindir)/iconmake"
+	rm iconmakearm
+	rm iconmakeintel
 uninstall:
 	rm "$(bindir)/iconmake"
